@@ -1,0 +1,206 @@
+* {
+    font-family: "Ubuntu Light", tahoma, arial, helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+/***** TAB BAR *****/
+
+/* Shrink tab bar */
+#tabbrowser-tabs,
+#tabbrowser-arrowscrollbox,
+#tabbrowser-tab,
+.tabbrowser-tab,
+.tab-stack,
+.tab-content,
+.tab-background {
+    height: 32px !important;
+    min-height: 32px !important;
+    margin-bottom: 0 !important;
+}
+
+:root {
+    --tab-min-height: 0 !important;
+    --tab-block-margin: 0 !important;
+}
+
+#tabs-newtab-button .toolbarbutton-icon,
+#alltabs-button .toolbarbutton-icon {
+    width: 32px !important;
+    padding: 8px !important;
+}
+
+#navigator-toolbox {
+    /* Remove black border */
+    margin-bottom: -1px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+    z-index: 1000 !important;
+}
+
+/* Move close button to the left on hover
+.tab-label-container {
+    order: 1;
+    font-size: 13px;
+}
+
+.tabbrowser-tab .tab-close-button {
+    display: none !important;
+    border-radius: 8px !important;
+    margin-left: -4.5px !important;
+    margin-right: 2px !important;
+}
+
+.tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-icon-stack {
+    display: none !important;
+    order: 3;
+}
+
+
+.tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-close-button {
+    display: block !important;
+    position: relative;
+    order: 0;
+} */
+
+/* Move close button to the right */
+.tabbrowser-tab .tab-close-button {
+    display: none !important;
+    border-radius: 8px !important;
+    margin-left: 2px !important;
+    margin-right: -4.5px !important;
+}
+
+.tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-icon-stack {
+    display: none !important;
+    order: 3;
+}
+
+.tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-close-button {
+    display: block !important;
+    position: relative;
+    order: 0;
+}
+
+/* Remove silly space */
+.titlebar-spacer {
+    width: 8px !important;
+}
+
+/***** URL BAR *****/
+.urlbar-input-box {
+    font-size: 13px !important;
+    font-weight: light !important;
+}
+
+#nav-bar {
+    position: absolute !important;
+    top: 40px !important;
+    left: 8px !important;
+    right: 8px !important;
+    height: 0px !important;
+    border-radius: 8px !important;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+
+    z-index: 1001 !important;
+    min-height: 0px !important;
+    transition: height var(--animation-easing-function) 500ms 500ms,
+        opacity var(--animation-easing-function) 500ms 500ms;
+    opacity: 0 !important;
+}
+
+:root[customizing] #nav-bar,
+#navigator-toolbox:hover #nav-bar,
+#nav-bar:focus-within {
+    height: 40px !important;
+    opacity: 100 !important;
+    transition: height var(--animation-easing-function) 500ms 200ms,
+        opacity var(--animation-easing-function) 500ms 200ms;
+}
+
+#urlbar[breakout] {
+    top: unset !important;
+}
+
+#nav-bar:focus-within #urlbar-input {
+    height: 28px !important;
+}
+
+#urlbar-input-container {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.urlbarView {
+    position: absolute !important;
+    background: #3c3c3c !important;
+    border-radius: 4px !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+}
+
+/***** NAV BUTTONS *****/
+toolbarbutton#back-button,
+toolbarbutton#forward-button {
+    width: 42px !important;
+    transition: width var(--animation-easing-function) 500ms,
+        opacity var(--animation-easing-function) 500ms;
+}
+
+toolbarbutton#back-button {
+    background: #484848 !important;
+    border-radius: 4px;
+    margin: 4px -10px 4px 16px !important;
+}
+
+toolbarbutton#forward-button {
+    background: #484848 !important;
+    border-radius: 4px;
+    margin: 4px -4px 4px -10px !important;
+}
+
+:root:not([customizing]) #nav-bar toolbarbutton#back-button[disabled=true] {
+    width: 0px !important;
+    opacity: 0 !important;
+    margin: 4px 0px 4px 20px !important;
+}
+
+:root:not([customizing]) #nav-bar toolbarbutton#forward-button[disabled=true] {
+    width: 0px !important;
+    opacity: 0 !important;
+    margin: 4px -8px 4px 0px !important;
+}
+
+#stop-reload-button {
+    background: #484848 !important;
+    padding: 4px !important;
+    border-radius: 4px;
+    margin: 4px 0px 4px 0px !important;
+    z-index: 5;
+}
+
+toolbarbutton#back-button:hover,
+toolbarbutton#forward-button:hover,
+#stop-reload-button:hover {
+    z-index: 10;
+}
+
+toolbarbutton#back-button .toolbarbutton-icon,
+toolbarbutton#forward-button .toolbarbutton-icon,
+#stop-reload-button .toolbarbutton-icon {
+    height: 30px !important;
+}
+
+#urlbar-background {
+    border-radius: 0 4px 4px 0 !important;
+    margin-left: -4px;
+    z-index: -1;
+}
+
+#urlbar {
+    padding-left: 8px !important;
+}
+
+#bookmarks-menu-button {
+    margin-right: 16px !important;
+}
+
+@import url("userContent.css");
